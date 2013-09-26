@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/core.css"/>
+<link type="text/css" rel="stylesheet" href="css/chosen.css" />
+<link type="text/css" rel="stylesheet" href="css/orange.css" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43423432-1', 'cabletipster.com');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.icheck.js"></script>
+<script type="text/javascript" src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="http://static.firebase.com/v0/firebase.js">
+</script>
+<script type='text/javascript'
+        src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
+<script type="text/javascript" src="js/chosen.jquery.js"></script>
+<script type="text/javascript" src="js/core.js"></script>
+
+<title>Add Your Cable Info</title>
+</head>
+
+<body class="blueBackground">
+<div class="container">
+	<div class="mainContent">
+		<h1 class="headerText botMargin10">Give a little. Save a lot!</h1>
+        <p class="subheaderText botMargin10">Give us a tiny bit more info on your services. You're just a couple minutes away from free access and big savings!</p>
+        <div id="inputTVPackage">
+           	<h3 class="headerText botMargin10">Comcast TV</h3>
+            <p class="subheaderText botMargin10">Choose your TV package</p>
+        <ul>
+			<li>
+				<div>
+                <input type="radio" name="iCheck" id="square-radio-1" class="radioSquare">
+				<label for="square-radio-1" class="radioLabel">Digital Economy (45+ Channels - Discovery, CNN, A&E, etc)</label>
+				</div>
+            </li>
+			<li>
+            	<div>
+				<input type="radio" name="iCheck" id="square-radio-2" class="radioSquare">
+				<label for="square-radio-2" class="radioLabel">Digital Starter (80+ Channels - all of the above, plus MTV, ESPN, Nickelodeon, etc)</label>
+				</div>
+            </li>
+            <li>
+            	<div>
+				<input type="radio" name="iCheck" id="square-radio-3" class="radioSquare">
+				<label for="square-radio-3" class="radioLabel">Digital Preferred (160+ Channels - the above, plus NFL Network, Encore, NBA TV, etc)</label>
+				</div>
+            </li>
+            <li>
+            	<div>
+				<input type="radio" name="iCheck" id="square-radio-4" class="radioSquare">
+				<label for="square-radio-4" class="radioLabel">Digital Premier (200+ Channels, the above plus HBO, Showtime, Cinemax, etc)</label>
+				</div>
+            </li>
+    		<li>
+            	<div>
+				<input type="radio" name="iCheck" id="square-radio-5" class="radioSquare">
+				<label for="square-radio-5" class="radioLabel">Limited Basic (10+ Channels - Local Only)</label>
+				</div>
+            </li>
+		</ul>
+    	</div>
+        <div id="inputNumberTVs">
+        	<ul>
+            	<li>
+					<label for="total-tv-input" class="labelTVInput">Total Number of TVs using Service</label>
+					<input type="text" name="total-tv-input" class="TVInputBox" placeholder="" value="" />
+                </li>
+                <li>
+					<label for="hd-tv-input" class="labelTVInput">Number of TVs that have HD Service</label>
+					<input type="text" name="hd-tv-input" class="TVInputBox" placeholder="" value="" />
+                </li>
+                <li>
+					<label for="dvr-tv-input" class="labelTVInput">Number of TVs that have DVR Service</label>
+					<input type="text" name="dvr-tv-input" class="TVInputBox" placeholder="" value="" />
+                </li>
+        	</ul>
+        </div>
+        <div id="TVAddOns">
+            <p class="subheaderText botMargin10">Any other add-ons to your TV service</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-1" class="checkboxSquare">
+                    <label for="square-checkbox-1" class="checkboxLabel">HBO</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-2" class="checkboxSquare">
+                    <label for="square-checkbox-2" class="checkboxLabel">Showtime</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-1" class="checkboxSquare">
+                    <label for="square-checkbox-1" class="checkboxLabel">Cinemax</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-1" class="checkboxSquare">
+                    <label for="square-checkbox-1" class="checkboxLabel">Starz</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-1" class="checkboxSquare">
+                    <label for="square-checkbox-1" class="checkboxLabel">Sports Premium Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-1" class="checkboxSquare">
+                    <label for="square-checkbox-1" class="checkboxLabel">Premium Latino Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="iCheck" id="square-checkbox-1" class="checkboxSquare">
+                    <label for="square-checkbox-1" class="checkboxLabel">Other International Channels</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+	<div>
+            <a href="#"><div class="button topMargin40" id="PackageButton" onclick="PackageButtonClicked();"><strong>Continue</strong></div></a>
+	</div>
+</div>
+
+</body>
+</html>

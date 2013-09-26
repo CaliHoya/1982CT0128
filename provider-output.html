@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/main.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.icons.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.theme.css"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43423432-1', 'cabletipster.com');
+  ga('send', 'pageview');
+
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<style>
+	span {
+		display: block;
+	}
+</style>
+<title>Neighborhood Service Info</title>
+</head>
+<body ng-app="tipOutput" ng-controller="Tips">
+   <header class="bck theme">
+        <div class="row">
+            <div class="column_6">
+                <h2 class="text italic thin">Cable Tipster</h2>
+            </div>
+            <!--
+            <nav class="column_6 text right">
+                <a href="#" class="button secondary"><span class="icon user"></span>Login</a>
+                <a href="#" class="button"><span class="icon pencil"></span>Signup</a>
+            </nav>
+            -->
+        </div>
+    </header>
+    <section class="bck light padding text center">	
+    </section>  
+	<div class="container">
+    	<div class="content">
+    		<table>
+    			<thead>
+    				<tr>
+    					<th>Price</th>
+    					<th>Plan Contents</th>
+    				</tr>
+    			</thead>
+    			<tbody>
+    				<tr ng-repeat="tip in tips">
+    					<td><h3>{{tip.priceMonthly | currency}}</h3></td>
+    					<td style="vertical-align:top"><span><strong>{{tip.providerName}}</strong></span><span ng-show="tip.TVPackage">TV Package: {{tip.TVPackage}}</span><span ng-show="tip.internetPackage">Internet Package: {{tip.internetPackage}}</span><span ng-show="tip.addOns">Add-ons: {{tip.addOns}}</span><span ng-show="tip.numberTotalTV"># of TVs: {{tip.numberTotalTV}}</span></td>
+    				</tr>
+    			</tbody>
+    		</table>
+    	</div>
+    </div>  
+<script type="text/javascript" src="http://static.firebase.com/v0/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
+<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
+<script src="js/core.js"></script>
+<script type="text/javascript">
+ //Angular
+angular.module('tipOutput', ['firebase']).controller('Tips', ['$scope', 'angularFire', 
+	function ($scope, angularFire) {
+		var ref = new Firebase('https://cabletipster.firebaseio.com/tips');
+		angularFire(ref, $scope, "tips");
+	}]);
+</script>
+</body>
+</html>

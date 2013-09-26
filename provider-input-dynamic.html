@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/main.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.theme.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.icons.css"/>
+<link type="text/css" rel="stylesheet" href="css/chosen.css" />
+<link type="text/css" rel="stylesheet" href="css/orange.css" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43423432-1', 'cabletipster.com');
+  ga('send', 'pageview');
+
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.icheck.js"></script>
+<script type="text/javascript" src="http://static.firebase.com/v0/firebase.js">
+</script>
+<script type='text/javascript'
+        src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
+<script type="text/javascript" src="js/chosen.jquery.js"></script>
+<script src="js/core.js"></script>
+
+<title>Add Your Cable Info</title>
+</head>
+<body class="blueBackground">
+	<div class="container">
+    	<div class="content">
+			<header>
+				<h1 class="headerText botMargin10">Add Info About Your Services</h1>
+			</header>
+<!--First Section loads automatically -->
+        <form id="providerPrimaryForm">
+            <div id="providerFirstSection">
+            <div id="providerDropdown">
+            	<p class="strong botMargin10">Tell us your service provider:</p>
+            	<select id="providerName" data-placeholder="Choose service provider here..." class="chosen-select" style="width:300px;" tabindex="2">
+                	<option value=""></option>
+                    <option value="Comcast">Comcast</option>
+                    <option value="ATT">AT&T U-Verse</option>
+                    <option value="DirecTV">DirecTV</option>
+                    <option value="DishNetwork">Dish Network</option>
+                    <option value="SonicNet">Sonic.net</option>
+                    <option value="Other">Other</option>
+                </select>
+           	</div>
+        </form>
+<!--Second section dynamically added -->
+        <form id="providerSecondaryForm">
+            <div id="servicesReceivedDropdown" class="hidden">
+            	<p class="strong botMargin10">What services do you receive from this provider?</p>
+                <select id="servicesReceived" data-placeholder="Choose services here..." class="chosen-select" style="width:300px;" tabindex="2">
+                	<option value=""></option>
+                    <option value="tv-internet">TV & Internet Bundle</option>
+                    <option value="tv">TV Only</option>
+                    <option value="internet">Internet Only</option>
+                    <option value="tv-internet-phone">TV, Internet & Phone Bundle</option>
+                    <option value="internet-phone">Intenet & Phone Bundle</option>
+                    <option value="tv-phone">TV & Phone Bundle</option>
+                </select>
+            </div>
+			</div>
+        </form>
+<!--Third section dynamically added -->
+<form id="providerTertiaryForm">
+        <div id="providerSecondSection" class="hidden"> 
+            <div id="lengthContractDropdown">
+                <p class="strong botMargin10">How long is your contract?</p>
+                <select id="lengthContract" data-placeholder="Choose contract length here..." class="chosen-select" style="width:300px;" tabindex="2">
+                	<option value=""></option>
+                    <option value="No Contract">No Contract</option>
+                    <option value="6 Months">6 Months</option>
+                    <option value="12 Months">12 Months</option>
+                    <option value="24 Months">24 Months</option>
+                	<option value="Other"></option>
+                </select>            
+            </div>
+            <div id="priceInputBox">
+            	<p class="strong botMargin5">Enter your monthly price for these services</p>
+                <p class="mini botMargin10">(excluding taxes & fees)</p>
+                <input type="text" placeholder="Enter your monthly price here" id="priceMonthly"/>
+            </div>
+        </div>
+<!--TV Section -->
+    <div id="Comcast-TV" class="hidden">
+         <div id="inputTVPackage">
+            <p class="subheaderText botMargin10">Choose your TV package</p>
+            <ul>
+    			<li>
+    				<div>
+                    <input type="radio" name="TV-radio" id="TV-radio-1" class="radioSquare" value="Digital Economy">
+    				<label for="TV-radio-1" class="radioLabel">Digital Economy (45+ Channels - Discovery, CNN, A&E, etc)</label>
+    				</div>
+                </li>
+    			<li>
+                	<div>
+    				<input type="radio" name="TV-radio" id="TV-radio-2" class="radioSquare" value="Digital Starter">
+    				<label for="TV-radio-2" class="radioLabel">Digital Starter (80+ Channels - all of the above, plus MTV, ESPN, Nickelodeon, etc)</label>
+    				</div>
+                </li>
+                <li>
+                	<div>
+    				<input type="radio" name="TV-radio" id="TV-radio-3" class="radioSquare" value="Digital Preferred">
+    				<label for="TV-radio-3" class="radioLabel">Digital Preferred (160+ Channels - the above, plus NFL Network, Encore, NBA TV, etc)</label>
+    				</div>
+                </li>
+                <li>
+                	<div>
+    				<input type="radio" name="TV-radio" id="TV-radio-4" class="radioSquare" value="Digital Premier">
+    				<label for="TV-radio-4" class="radioLabel">Digital Premier (200+ Channels, the above plus HBO, Showtime, Cinemax, etc)</label>
+    				</div>
+                </li>
+        		<li>
+                	<div>
+    				<input type="radio" name="TV-radio" id="TV-radio-5" class="radioSquare" value="Limited Basic">
+    				<label for="TV-radio-5" class="radioLabel">Limited Basic (10+ Channels - Local Only)</label>
+    				</div>
+                </li>
+    		</ul>
+    	</div>
+        <div id="inputNumberTVs">
+            <ul>
+                <li>
+                    <label for="total-tv-input" class="labelTVInput">Total Number of TVs using Service</label>
+                    <input type="text" name="total-tv-input" id="total-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="hd-tv-input" class="labelTVInput">Number of TVs that have HD Service</label>
+                    <input type="text" name="hd-tv-input" id="hd-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="dvr-tv-input" class="labelTVInput">Number of TVs that have DVR Service</label>
+                    <input type="text" name="dvr-tv-input" id="dvr-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+            </ul>
+        </div>
+        <div id="TVAddOns">
+            <p class="subheaderText botMargin10">Any other add-ons to your TV service</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-1" class="TV-addon" value="HBO">
+                    <label for="add-on-checkbox-1" class="checkboxLabel">HBO</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-2" class="TV-addon" value="Showtime">
+                    <label for="add-on-checkbox-2" class="checkboxLabel">Showtime</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-3" class="TV-addon" value="Cinemax">
+                    <label for="add-on-checkbox-3" class="checkboxLabel">Cinemax</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-4" class="TV-addon" value="Starz">
+                    <label for="add-on-checkbox-4" class="checkboxLabel">Starz</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-5" class="TV-addon" value="Sports Premium">
+                    <label for="add-on-checkbox-5" class="checkboxLabel">Sports Premium Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-6" class="TV-addon" value="Latino Premium">
+                    <label for="add-on-checkbox-6" class="checkboxLabel">Premium Latino Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-7" class="TV-addon" value="Other International Premium">
+                    <label for="add-on-checkbox-7" class="checkboxLabel">Other International Channels</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+     </div>
+   <div id="ATT-TV" class="hidden">
+         <div id="inputTVPackage">
+            <p class="subheaderText botMargin10">Choose your TV package</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-1" class="radioSquare" value="U-Basic">
+                    <label for="TV-radio-1" class="radioLabel">U-Basic (local channels only)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-2" class="radioSquare" value="U-Family">
+                    <label for="TV-radio-2" class="radioLabel">U-Family (130+ channels, incl. Animal Planet, Disney Channel, Food Network, Nickelodeon)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-3" class="radioSquare" value="U200">
+                    <label for="TV-radio-3" class="radioLabel">U200 (280+ channels, incl. ESPN, CNN, Cartoon Network, etc)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-4" class="radioSquare" value="U300">
+                    <label for="TV-radio-4" class="radioLabel">U300 (370+ channels, incl U200 + Starz, Encore, Showtime, etc)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-5" class="radioSquare" value="U450">
+                    <label for="TV-radio-5" class="radioLabel">U450 (440+ channels, incl. U300 + HBO, etc)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="inputNumberTVs">
+            <ul>
+                <li>
+                    <label for="total-tv-input" class="labelTVInput">Total Number of TVs using Service</label>
+                    <input type="text" name="total-tv-input" id="total-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="hd-tv-input" class="labelTVInput">Number of TVs that have HD Service</label>
+                    <input type="text" name="hd-tv-input" id="hd-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="dvr-tv-input" class="labelTVInput">Number of TVs that have DVR Service</label>
+                    <input type="text" name="dvr-tv-input" id="dvr-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+            </ul>
+        </div>
+        <div id="TVAddOns">
+            <p class="subheaderText botMargin10">Any other add-ons to your TV service</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-1" class="TV-addon" value="HBO">
+                    <label for="add-on-checkbox-1" class="checkboxLabel">HBO</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-2" class="TV-addon" value="Showtime">
+                    <label for="add-on-checkbox-2" class="checkboxLabel">Showtime</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-3" class="TV-addon" value="Cinemax">
+                    <label for="add-on-checkbox-3" class="checkboxLabel">Cinemax</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-4" class="TV-addon" value="Starz">
+                    <label for="add-on-checkbox-4" class="checkboxLabel">Starz</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-5" class="TV-addon" value="Sports Premium">
+                    <label for="add-on-checkbox-5" class="checkboxLabel">Sports Premium Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-6" class="TV-addon" value="Latino Premium">
+                    <label for="add-on-checkbox-6" class="checkboxLabel">Premium Latino Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-7" class="TV-addon" value="Other International Premium">
+                    <label for="add-on-checkbox-7" class="checkboxLabel">Other International Channels</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+   <div id="DirecTV-TV" class="hidden">
+         <div id="inputTVPackage">
+            <p class="subheaderText botMargin10">Choose your TV package</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-1" class="radioSquare" value="Entertainment Package">
+                    <label for="TV-radio-1" class="radioLabel">Entertainment Package (140+ Channels, incl. ESPN, CNN, MTV, Nickelodeon, etc)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-2" class="radioSquare" value="Choice Package">
+                    <label for="TV-radio-2" class="radioLabel">Choice Package (150+ Channels, including regional sports networks such as Big Ten Network, ESPNU, etc)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-3" class="radioSquare" value="XTRA Package">
+                    <label for="TV-radio-3" class="radioLabel">XTRA Package (205+ Channels, incl. NBA TV, FOX Soccer, etc)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-4" class="radioSquare" value="Ultimate Package">
+                    <label for="TV-radio-4" class="radioLabel">Ultimate Package (225+ Channels, including all channels in XTRA plus 11 extra movie channels)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-5" class="radioSquare" value="Premier Package">
+                    <label for="TV-radio-5" class="radioLabel">Premier Package (285+ Channels, including all premium channels such as HBO, Starz, Showtime, etc)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="inputNumberTVs">
+            <ul>
+                <li>
+                    <label for="total-tv-input" class="labelTVInput">Total Number of TVs using Service</label>
+                    <input type="text" name="total-tv-input" id="total-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="hd-tv-input" class="labelTVInput">Number of TVs that have HD Service</label>
+                    <input type="text" name="hd-tv-input" id="hd-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="dvr-tv-input" class="labelTVInput">Number of TVs that have DVR Service</label>
+                    <input type="text" name="dvr-tv-input" id="dvr-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+            </ul>
+        </div>
+        <div id="TVAddOns">
+            <p class="subheaderText botMargin10">Any other add-ons to your TV service</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-1" class="TV-addon" value="HBO">
+                    <label for="add-on-checkbox-1" class="checkboxLabel">HBO</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-2" class="TV-addon" value="Showtime">
+                    <label for="add-on-checkbox-2" class="checkboxLabel">Showtime</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-3" class="TV-addon" value="Cinemax">
+                    <label for="add-on-checkbox-3" class="checkboxLabel">Cinemax</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-4" class="TV-addon" value="Starz">
+                    <label for="add-on-checkbox-4" class="checkboxLabel">Starz</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-5" class="TV-addon" value="Sports Premium">
+                    <label for="add-on-checkbox-5" class="checkboxLabel">Sports Premium Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-6" class="TV-addon" value="Latino Premium">
+                    <label for="add-on-checkbox-6" class="checkboxLabel">Premium Latino Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-7" class="TV-addon" value="Other International Premium">
+                    <label for="add-on-checkbox-7" class="checkboxLabel">Other International Channels</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+   <div id="DishNetwork-TV" class="hidden">
+         <div id="inputTVPackage">
+            <p class="subheaderText botMargin10">Choose your TV package</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-1" class="radioSquare" value="America's Top 120">
+                    <label for="TV-radio-1" class="radioLabel">America's Top 120 (190+ Channels, incl. USA, CNN, CMT, Disney, ESPN, E!)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-2" class="radioSquare" value="America's Top 120+">
+                    <label for="TV-radio-2" class="radioLabel">America's Top 120+ (190+ Channels, incl. Regional Sports Networks, FUEL TV, etc)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-3" class="radioSquare" value="America's Top 200">
+                    <label for="TV-radio-3" class="radioLabel">America's Top 200 (235+ Channels, incl. Disney XD, Bravo, Nick Jr., NFL Network, MLB Network)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-4" class="radioSquare" value="America's Top 250">
+                    <label for="TV-radio-4" class="radioLabel">America's Top 250 (290+ Channels, incl. The Movie Channel, DIY Network, H2, Nicktoons)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="TV-radio" id="TV-radio-5" class="radioSquare" value="Smart Pack">
+                    <label for="TV-radio-5" class="radioLabel">Smart Pack (55+ Channels, mainly local channels)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="inputNumberTVs">
+            <ul>
+                <li>
+                    <label for="total-tv-input" class="labelTVInput">Total Number of TVs using Service</label>
+                    <input type="text" name="total-tv-input" id="total-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="hd-tv-input" class="labelTVInput">Number of TVs that have HD Service</label>
+                    <input type="text" name="hd-tv-input" id="hd-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+                <li>
+                    <label for="dvr-tv-input" class="labelTVInput">Number of TVs that have DVR Service</label>
+                    <input type="text" name="dvr-tv-input" id="dvr-tv-input" class="TVInputBox" placeholder="0" />
+                </li>
+            </ul>
+        </div>
+        <div id="TVAddOns">
+            <p class="subheaderText botMargin10">Any other add-ons to your TV service</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-1" class="TV-addon" value="HBO">
+                    <label for="add-on-checkbox-1" class="checkboxLabel">HBO</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-2" class="TV-addon" value="Showtime">
+                    <label for="add-on-checkbox-2" class="checkboxLabel">Showtime</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-3" class="TV-addon" value="Cinemax">
+                    <label for="add-on-checkbox-3" class="checkboxLabel">Cinemax</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-4" class="TV-addon" value="Starz">
+                    <label for="add-on-checkbox-4" class="checkboxLabel">Starz</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-5" class="TV-addon" value="Sports Premium">
+                    <label for="add-on-checkbox-5" class="checkboxLabel">Sports Premium Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-6" class="TV-addon" value="Latino Premium">
+                    <label for="add-on-checkbox-6" class="checkboxLabel">Premium Latino Channels</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="checkbox" name="TV-addon" id="add-on-checkbox-7" class="TV-addon" value="Other International Premium">
+                    <label for="add-on-checkbox-7" class="checkboxLabel">Other International Channels</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--Internet Input begin -->
+   <div id="Comcast-internet" class="hidden">
+         <div id="inputInternetPackage">
+            <p class="subheaderText botMargin10">Choose your Internet package</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-1" class="radioSquare" value="Economy Plus">
+                    <label for="internet-radio-1" class="radioLabel">Economy Plus (download speeds up to 3 Mbps)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-2" class="radioSquare" value="Performance">
+                    <label for="internet-radio-2" class="radioLabel">Performance (download speeds up to 25 Mbps)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-3" class="radioSquare" value="Blast!">
+                    <label for="internet-radio-3" class="radioLabel">Blast! (download speeds up to 50 Mbps)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-4" class="radioSquare" value="Extreme 105">
+                    <label for="internet-radio-4" class="radioLabel">Extreme 105 (download speeds up to 105 Mbps)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>    
+   <div id="ATT-internet" class="hidden">
+         <div id="inputInternetPackage">
+            <p class="subheaderText botMargin10">Choose your Internet package</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-1" class="radioSquare" value="Internet Pro">
+                    <label for="internet-radio-1" class="radioLabel">Internet Pro (download speeds up to 3 Mbps)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-2" class="radioSquare" value="Internet Elite">
+                    <label for="internet-radio-2" class="radioLabel">Internet Elite (download speeds up to 6 Mbps)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-3" class="radioSquare" value="Internet Max">
+                    <label for="internet-radio-3" class="radioLabel">Internet Max (download speeds up to 12 Mbps)</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-4" class="radioSquare" value="Internet Max Plus">
+                    <label for="internet-radio-4" class="radioLabel">Internet Max Plus (download speeds up to 18 Mbps)</label>
+                    </div>
+                </li>
+               <li>
+                    <div>
+                    <input type="radio" name="internet-radio" id="internet-radio-5" class="radioSquare" value="Internet Max Turbo">
+                    <label for="internet-radio-5" class="radioLabel">Internet Max Turbo (download speeds up to 24 Mbps)</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--Phone input begin -->
+   <div id="Comcast-phone" class="hidden">
+         <div id="inputPhonePackage">
+            <p class="subheaderText botMargin10">What home phone plan do you have?</p>
+            <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="phone-radio" id="phone-radio-1" class="radioSquare" value="Unlimited Nationwide">
+                    <label for="phone-radio-1" class="radioLabel">Unlimited Nationwide</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="phone-radio" id="phone-radio-2" class="radioSquare" value="International Plan">
+                    <label for="phone-radio-2" class="radioLabel">International Plan</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+   <div id="ATT-phone" class="hidden">
+         <div id="inputPhonePackage">
+            <p class="subheaderText botMargin10">What home phone plan do you have?</p>
+             <ul>
+                <li>
+                    <div>
+                    <input type="radio" name="phone-radio" id="phone-radio-1" class="radioSquare" value="250 Minutes Nationwide">
+                    <label for="phone-radio-1" class="radioLabel">250 Minutes Nationwide</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="phone-radio" id="phone-radio-2" class="radioSquare" value="Unlimited Nationwide">
+                    <label for="phone-radio-2" class="radioLabel">Unlimited Nationwide</label>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                    <input type="radio" name="phone-radio" id="phone-radio-3" class="radioSquare" value="Unlimited International">
+                    <label for="phone-radio-3" class="radioLabel">Unlimited International</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+<!-- Continue button -->
+	<div>
+        <div>
+            <a href="#"><div class="button topMargin40 hidden" id="providerButton" onclick="ProviderInputButtonClicked();"><strong>Continue</strong></div></a>
+        </div>
+    </div>
+</div>
+</form>
+</body>
+</html>

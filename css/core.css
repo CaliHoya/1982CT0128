@@ -1,0 +1,443 @@
+/* CSS Reset Section Begin
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS Reset Section End
+*/
+
+div {
+	
+}
+.header {
+	position: relative;
+	margin-top: -10px;
+	overflow: hidden; 
+	height: 40px;
+	background-color: #0B486B;
+}
+
+.hidden {
+	display: none;
+}
+
+#logo {
+	font-weight: bold;
+	font-size: 25px;
+	color: white;
+	float: left;
+	font-family: 'Roboto', helvetica, arial, verdana, sans-serif;
+	margin-left: 10px;
+	margin-top: 0px;
+}
+
+#signin {
+	color: blue;
+	float: right;
+	text-align: right;
+	font-family:  Arial, Helvetica, sans-serif;
+	color: white;
+	margin: 12px 10px 0px 0px; 
+}
+
+#getstarted {
+	text-align: center;
+	width: 250px;
+	height: 45px;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFA319;
+	border-top: 2px solid #fad1c4;
+	border-right: 2px solid #d45e2f;
+	border-bottom: 2px solid #8c4f3b;
+	border-left: 2px solid #d45e2f;
+	-moz-box-shadow: 0px 0px 7px #676767;
+	-o-box-shadow: 0px 0px 7px #676767;
+	-webkit-box-shadow: 0px 0px 7px #676767;
+	box-shadow: 0px 0px 7px #676767;
+	font-size: 2em;
+	line-height: 45px;
+	font-weight: 900;
+	font-family: 'Roboto', helvetica, arial, verdana, sans-serif;
+	color: white;
+	opacity: 0.95;
+}
+
+#registration {
+	margin-top: 20px;
+}
+
+/* #registerButton {
+	text-align: center;
+	width: 75px;
+	height: 30px;
+	margin-left: 10px;
+	border-radius: 5px;
+	border-width: 0px;
+	background-color: #69D2E7;
+	font-family: Verdana, Geneva, sans-serif;
+	color: white;
+	margin-top: 20px;
+	margin-left: 120px;
+	opacity: 0.75;
+	display: inline-block;
+} */
+
+li {
+	list-style:none;
+	position:relative;
+}
+
+.labelSignUp { 
+	display: inline-block;
+	width: 110px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans;
+}
+
+#address1, #address2 {
+	width: 200px;
+}
+
+#address1, #address2, #city {
+	margin-top: 10px;
+}
+
+#address1, #address2 {
+	margin-bottom: 0px;
+}
+
+.addressHelperText {
+	margin-left: 115px;
+	font-style: italic;
+	font-size: 0.8em;
+}
+
+form { 
+margin-bottom:0; 
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.longTextInput { width:300px; }
+
+input[type=text], input[type=password] {
+    border: 5px solid white; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 5px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+
+#priceMonthly {
+	width: 300px;
+}
+
+#providerCheckbox li {
+	margin-bottom: 10px;
+}
+
+#MainCol {
+	border: 1px solid #ccc;
+	padding: 20px 15px 30px 15px;
+	width: 620px;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+.primary {
+	color: #1d7ccc;
+	font-family: 'Roboto', helvetica, arial, verdana, sans-serif;
+}
+
+h1 {
+	font-size: 20px;
+	line-height: 1.1em;
+}
+
+.padLt20 {
+	padding-left: 20px !important;
+}
+
+.margLt30 {
+	margin-left: 30px !important;
+}
+
+.FBSignInOption {
+	margin: 20px 0px 15px 0px;
+}
+
+.FBSignInBtn {
+	float: left;
+	width: 280px;
+	display: block;
+}
+
+.FBFacePile {
+	margin-left: 45px;
+	height: 110px;
+	overflow: hidden;
+	display: block;
+}
+
+div.clear {
+	clear: both !important;
+}
+
+.hr {
+	display: block;
+	margin-top: 30px;
+	height: 0px;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+span.center {
+	display: inline-block;
+	margin: 0px auto 0px auto;
+	position: relative;
+	margin-top: -20px;
+	background-color: #DCEDFF;
+	vertical-align: baseline;
+}
+
+#landingMainText {
+	color: #1d7ccc;
+	font-size: 2.6em;
+	font-weight: 900;
+	text-align: center;
+	font-family: 'Roboto', helvetica, arial, verdana, sans-serif;
+	padding-bottom: 30px;
+}
+
+#landingBackground {
+	padding: 100px 0px 100px 0px;
+	background-color: #DCEDFF;
+	height: 600px;
+}
+
+#MainBodyContent {
+	background-color: #DCEDFF;
+}
+
+#signUpText {
+	color: black;
+	font-size: 1em;
+	text-align: center;
+}
+
+#servicesReceivedDropdown {
+	padding-bottom:20px;
+}
+
+#providerDropdown {
+	padding-bottom:20px;
+}
+
+#lengthContractDropdown {
+	padding-bottom:20px;	
+}
+
+.blueBackground {
+	background-color: #DCEDFF;
+	width: 100%;
+}
+
+.headerText {
+	color: #1d7ccc;
+	font-weight: 900;
+	font-family: 'Roboto', helvetica, arial, verdana, sans-serif;	
+}
+
+.subheaderText {
+	color: black;
+	font-weight: 900;
+	font-size: 0.8em;
+	font-family: 'Roboto', helvetica, arial, verdana, sans-serif;	
+}
+
+.mini {
+	font-size: 0.75em;
+}
+
+.neg10margin {
+	margin-top: -10px;
+}
+
+.margin0 {
+	margin: 0px;
+}
+
+.button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#4e95c4), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #4e95c4, #65a9d7);
+   background: -moz-linear-gradient(top, #4e95c4, #65a9d7);
+   background: -ms-linear-gradient(top, #4e95c4, #65a9d7);
+   background: -o-linear-gradient(top, #4e95c4, #65a9d7);
+   padding: 5.5px 11px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 16px;
+   font-family: 'Roboto', helvetica, arial, verdana, sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+   font-weight: 900;
+   width: 150px;
+   height: 35px;
+   line-height: 35px;
+   text-align: center;
+   }
+.button:hover {
+   border-top-color: #389bde;
+   background: #389bde;
+   color: #ffffff;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+}
+
+#feedback { 
+	font-size: 1.4em; 
+}
+
+/* #selectable .ui-selecting {
+	background: #FECA40; 
+}
+
+#selectable .ui-selected {
+		background: #F39814;
+		color: white; 
+}
+
+#selectable {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 200px;
+}
+
+#selectable li {
+	margin: 3px;
+	padding: 0.4em;
+	font-size: 1em;
+	height: 18px; 
+	display: inline-block;
+}
+
+#selectable li p {
+	display: inline-block;
+} */
+
+.width150 {
+	width: 150;
+}
+
+.container {
+	margin: 10px;
+}
+
+.botMargin10 {
+	margin-bottom: 10px;
+}
+
+.botMargin5 {
+	margin-bottom: 5px;
+}
+
+.neg5MarginTop {
+	margin-top: -5px;
+	vertical-align: central;
+}
+
+li div > * {
+	vertical-align: middle;
+}
+
+.labelTVInput { 
+	display: inline-block;
+	width: 200px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: 'Helvetica Neue', HelveticaNeue, Helvetica, Arial, sans;
+	margin: 20px 0px;
+}
+
+.TVInputBox {
+	margin-bottom: 20px;
+	width: 50px;
+}
+
+#TVAddOns {
+	margin-top: 20px;
+}
+
+.topMargin40 {
+	margin-top: 40px;
+}

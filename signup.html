@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/main.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.icons.css"/>
+<link type="text/css" rel="stylesheet" href="css/main.theme.css"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43423432-1', 'cabletipster.com');
+  ga('send', 'pageview');
+
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="http://static.firebase.com/v0/firebase.js"></script>
+<script type='text/javascript'
+        src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
+<script type="text/javascript" src="js/core.js"></script>
+
+<title>Sign up for Cable Tipster!</title>
+</head>
+
+<body>
+ <header class="bck theme">
+      <div class="row">
+          <div class="column_6">
+              <h2 class="text italic thin">Cable Tipster</h2>
+          </div>
+          <!--
+          <nav class="column_6 text right">
+              <a href="#" class="button secondary"><span class="icon user"></span>Login</a>
+              <a href="#" class="button"><span class="icon pencil"></span>Signup</a>
+          </nav>
+          -->
+      </div>
+  </header>
+  <section class="padding-top">
+    <div class="row">
+      <div class="column_8 offset_2 padding" style="border: 2px solid #ecf0f1;-webkit-border-radius:4px;-moz-border-radius:4px;-ms-border-radius:4px;-o-border-radius:4px;border-radius:4px">
+        <div id="MainBodyContent">
+          <div id="MainCol">
+              <h3 class="text book center color theme padding-bottom">Get immediate access to the best rates in your area!</h3>
+                <div class="FBSignInOption column_7">
+                  <div class="FBSignInBtn text center column_3">
+                      <a href="#" onclick="FBLoginButtonClicked();"><img src="img/facebook_button.jpg" alt="" /></a>
+                    </div>
+                  <div class="FBFacePile text center column_3">
+                    <fb:facepile app_id="417197661719213" action="og_runkeeper:run" width="300" max_rows="1"></fb:facepile>
+                  </div>
+                </div>
+                  <div class="clear">
+                    </div>
+                <div class="hr padding-top padding-bottom text center" >
+                <hr />
+                  <strong class="text center padding-left padding-right" style="display:inline-block;position:relative;margin:-25px auto 0px auto;background-color:#FFF">OR</strong>
+                </div>
+                <div id="signUpText" class="text center padding">
+                <p>Sign Up with Email</p>
+                </div>
+              <form id="registration" class="column_4" action="" method="POST">
+                <fieldset>
+                  <label for="email-input" class="labelSignUp">Email</label>
+                  <input type="email" name="email-input" id="email-input" placeholder="name@example.com" value="" />
+                </fieldset>
+                <fieldset>
+                  <label for="pwd-input" class="labelSignUp">Password</label>
+                  <input type="password" name="pwd-input" id="pwd-input" value="" placeholder="Your password" />
+                </fieldset>
+                <fieldset>
+                  <label for="repeat-pwd-input" class="labelSignUp">Verify Password</label>
+                  <input type="password" name="repeat-pwd-input" value="" placeholder="Retype password" />
+                </fieldset>
+                    <div class="padding text center column_3">
+                          <a href="provider-input-dynamic.html"><div class="button anchor" id="emailSignupButton" onclick="EmailSignupButtonClicked();"><strong>Sign Up</strong></div></a>
+                    </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

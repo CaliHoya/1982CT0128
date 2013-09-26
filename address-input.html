@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/core.css"/>
+<link type="text/css" rel="stylesheet" href="css/chosen.css" />
+<link type="text/css" rel="stylesheet" href="css/orange.css" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43423432-1', 'cabletipster.com');
+  ga('send', 'pageview');
+
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.icheck.js"></script>
+<script type="text/javascript" src="http://static.firebase.com/v0/firebase.js">
+</script>
+<script type='text/javascript'
+        src='https://cdn.firebase.com/v0/firebase-simple-login.js'></script>
+<script type="text/javascript" src="js/chosen.jquery.js"></script>
+<script src="js/core.js"></script>
+
+<title>Locate Your Neighborhood</title>
+</head>
+
+<body class="blueBackground">
+	<div class="container">
+		<div class="content">
+			<header>
+				<h1 class="headerText botMargin10">Almost There!</h1>
+				<h3 class="subheaderText"><strong>Enter your address info to see the cable tips closest to you!</strong></h3>
+				<p class="botMargin10">Your info will always be anonymous and only be used to make your data more useful</p>
+			</header>
+			<form id="addressInput">
+				<ul>
+					<li>
+						<label for="address1" class="labelSignUp">Address Line 1</label>
+						<input type="text" id="address1" name="address1" placeholder="123 Elm St.">
+						<p class="addressHelperText">Street address, P.O. box, Company name, etc.</p>
+					</li>
+					<li>
+						<label for="address2" class="labelSignUp">Address Line 2</label>
+						<input type="text" id="address2" name="address2" placeholder="">
+						<p class="addressHelperText">Apartment, suite, unit, etc.</p>
+					</li>
+					<li>
+						<label for="city" class="labelSignUp">City</label>
+						<input type="text" id="city" name="city" placeholder="">
+					</li>
+					<li>
+						<label for="state" class="labelSignUp">State</label>
+						<input type="text" id="state" name="state" placeholder="">
+					</li>
+					<li>
+						<label for="zipCode" class="labelSignUp">Zip Code</label>
+						<input type="text" id="zipCode" name="zipCode" placeholder="">
+					</li>
+				</ul>
+	        <div>
+	            <a href="#"><div class="button topMargin40" id="addressButton" onclick="AddressInputButtonClicked();"><strong>See Results!</strong></div></a>
+	        </div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

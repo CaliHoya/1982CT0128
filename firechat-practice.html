@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app>
+<head>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"
+</head>
+<body>
+<div class="well" ng-app="chat" ng-controller="Chat">
+  <form class="form-inline">
+    Your name: <input type="text" ng-model="username">
+  </form>
+  <div ng-cloak ng-repeat="message in messages">
+    <em>{{message.from}}: </em>{{message.content}}
+  </div><br/>
+  <form class="form-inline" ng-submit="addMessage()">
+    <input type="text" ng-model="message" placeholder="Message...">
+    <button class="btn" type="submit">
+      <i class="icon-reply"> Send</i>
+    </button>
+  </form>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+<script src="//cdn.firebase.com/v0/firebase.js"></script>
+<script src="//cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
+<script type="text/javascript">
+  angular.module('chat', ['firebase']).controller('Chat', ['$scope', 'angularFire',
+    function($scope, angularFire) {
+      var ref = new Firebase('https://cabletipster.firebaseio.com/chat');
+      angularFire(ref.limit(15), $scope, "messages");
+      $scope.username = 'Guest' + Math.floor(Math.random()*101);
+      $scope.addMessage = function() {
+        $scope.messages[ref.push().name()] = {
+          from: $scope.username, content: $scope.message
+        };
+        $scope.message = "";
+      }}]);
+</script>
+</body>
+</html>
